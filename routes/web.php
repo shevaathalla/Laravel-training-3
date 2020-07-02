@@ -25,3 +25,4 @@ Route::get('/signup', function () {
 });
 Route::get('/pertanyaan', 'PertanyaanController@index');
 Route::get('/pertanyaan/create', 'PertanyaanController@create');
+Route::post('/pertanyaan', 'pertanyaanController@store');

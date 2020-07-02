@@ -35,7 +35,8 @@ class JawabanController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $list = PertannyaanModel::insert($request);
+        return redirect('/pertanyaan');
     }
 
     /**
