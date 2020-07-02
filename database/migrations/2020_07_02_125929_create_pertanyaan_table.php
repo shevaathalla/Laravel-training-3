@@ -19,7 +19,7 @@ class CreatePertanyaanTable extends Migration
             $table->string('isi');
             $table->foreignId('users_id')->constrained('users');
             $table->integer('like');
-            $table->integer('dilike');
+            $table->integer('dislike');
             $table->integer('vote');
             $table->timestamps();
         });

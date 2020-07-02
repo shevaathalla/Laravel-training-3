@@ -14,7 +14,9 @@ class PertanyaanController extends Controller
      */
     public function index()
     {
-        //
+        $list = PertanyaanModel::get_all();
+
+        return view('pertanyaan.list', compact('list'));
     }
 
     /**
@@ -24,7 +26,7 @@ class PertanyaanController extends Controller
      */
     public function create()
     {
-        //
+        return view('pertanyaan.create');
     }
 
     /**

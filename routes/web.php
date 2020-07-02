@@ -23,4 +23,5 @@ Route::post('/users', 'UsersController@store');
 Route::get('/signup', function () {
     return view('user.form');
 });
-
+Route::get('/pertanyaan', 'PertanyaanController@index');
+Route::get('/pertanyaan/create', 'PertanyaanController@create');
