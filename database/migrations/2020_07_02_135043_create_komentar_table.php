@@ -17,8 +17,8 @@ class CreateKomentarTable extends Migration
             $table->id();
             $table->string('isi');
             $table->foreignId('users_id')->constrained('users');
-            $table->foreignId('pertanyaan_id')->constrained('pertanyaan');
-            $table->foreignId('jawaban_id')->constrained('jawaban');
+            $table->foreignId('pertanyaan_id')->nullable()->constrained('pertanyaan');
+            $table->foreignId('jawaban_id')->nullable()->constrained('jawaban');
             $table->timestamps();
         });
     }
