@@ -27,9 +27,30 @@ class PertanyaanModel
             ]
         );
     }
-    public static function get_data($id)
+    public static function get_data($pertanyaanId)
     {
-        $data = DB::table('pertanyaan')->find($id);
+        $data = DB::table('pertanyaan')->where('id', $pertanyaanId)->first();
         return $data;
+    }
+
+    public static function update($data, $pertanyaanId)
+    {
+        DB::table('pertanyaan')
+        ->where('id', $pertanyaanId)
+        ->update(
+            [
+                'judul' => $data['judul'],
+                'isi' => $data['isi'],
+                'users_id'  => $data['id'],
+                'updated_at' => date('Y-m-d H:i:s')
+            ]
+        );
+    }
+
+    public static function destroy($pertanyaanId)
+    {
+        DB::table('pertanyaan')
+        ->where('id', $pertanyaanId)
+        ->delete();
     }
 }

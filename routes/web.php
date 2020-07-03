@@ -24,10 +24,14 @@ Route::get('/signup', function () {
     return view('user.form');
 });
 Route::get('/pertanyaan', 'PertanyaanController@index');
-Route::get('/pertanyaan/show/{pertanyaanId}', 'PertanyaanController@show');
-Route::get('/pertanyaan/edit/{pertanyaanId}', 'PertanyaanController@edit');
-Route::get('/pertanyaan/create', 'PertanyaanController@create');
-Route::get('/jawaban/{pertanyaanId}/create', 'JawabanController@create');
 Route::post('/pertanyaan', 'PertanyaanController@store');
+Route::get('/pertanyaan/create', 'PertanyaanController@create');
+Route::get('/pertanyaan/{pertanyaanId}', 'PertanyaanController@show');
+Route::delete('/pertanyaan/{pertanyaanId}', 'PertanyaanController@destroy');
+Route::get('/jawaban/{pertanyaanId}/create', 'JawabanController@create');
+
 Route::get('/jawaban/{pertanyaanId}', 'JawabanController@index');
 Route::post('/jawaban/{pertanyaanId}', 'JawabanController@store');
+
+Route::get('/pertanyaan/{pertanyaanId}/edit', 'PertanyaanController@edit');
+Route::put('/pertanyaan/{pertanyaanId}', 'PertanyaanController@update');

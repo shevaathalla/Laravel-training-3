@@ -48,10 +48,10 @@ class PertanyaanController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show($pertanyaanId)
     {
-        $data = PertanyaanModel::get_data($id);
-        $jawaban = JawabanModel::get_all($id);
+        $data = PertanyaanModel::get_data($pertanyaanId);
+        $jawaban = JawabanModel::get_all($pertanyaanId);
         return view('pertanyaan.show', compact('data', 'jawaban'));
     }
 
@@ -61,9 +61,10 @@ class PertanyaanController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit($pertanyaanId)
     {
-        return view('pertanyaan.edit', compact('id'));
+        $data = PertanyaanModel::get_data($pertanyaanId);
+        return view('pertanyaan.edit', compact('data'));
     }
 
     /**
@@ -73,9 +74,11 @@ class PertanyaanController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, $pertanyaanId)
     {
-        //
+        // dd($pertanyaanId);
+        $update = PertanyaanModel::update($request, $pertanyaanId);
+        return redirect('/pertanyaan');
     }
 
     /**
@@ -84,8 +87,9 @@ class PertanyaanController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy($pertanyaanId)
     {
-        //
+        $delete = PertanyaanModel::destroy($pertanyaanId);
+        return redirect('/pertanyaan');
     }
 }
