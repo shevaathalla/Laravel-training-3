@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Model\PertanyaanModel;
+use App\Model\JawabanModel;
 
 class PertanyaanController extends Controller
 {
@@ -49,7 +50,9 @@ class PertanyaanController extends Controller
      */
     public function show($id)
     {
-        //
+        $data = PertanyaanModel::get_data($id);
+        $jawaban = JawabanModel::get_all($id);
+        return view('pertanyaan.show', compact('data', 'jawaban'));
     }
 
     /**
@@ -60,7 +63,7 @@ class PertanyaanController extends Controller
      */
     public function edit($id)
     {
-        //
+        return view('pertanyaan.edit', compact('id'));
     }
 
     /**

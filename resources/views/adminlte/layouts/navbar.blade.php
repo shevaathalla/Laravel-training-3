@@ -8,10 +8,13 @@
             <a href="/" class="nav-link">Home</a>
         </li>
         <li class="nav-item d-none d-sm-inline-block">
-            <a href="#" class="nav-link">Contact</a>
+            <a href="/users" class="nav-link">Users List</a>
         </li>
         <li class="nav-item d-none d-sm-inline-block">
-            <a href="/data-tables" class="nav-link">Data-table</a>
+            <a href="/pertanyaan" class="nav-link">Pertanyaan List</a>
+        </li>
+        <li class="nav-item d-none d-sm-inline-block">
+            <a href="/pertanyaan/create" class="nav-link">Pertanyaan Create</a>
         </li>
     </ul>
 

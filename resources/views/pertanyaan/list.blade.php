@@ -9,14 +9,16 @@
                 ID Pertanyaan : {{$q->id}}
             </div>
             <div class="card-body">
-                <h3 class="card-title"><b>{{$q->judul}}</b></h3>
-                <p class="card-text">{{$q->isi}}</p>
+            <h3 class="card-title" style="font-size: 32px; font-weight: bold; text-decoration: underline; color:black;"><a href="/pertanyaan/show/{{$q->id}}">{{$q->judul}}</a></h3>
+                <p class="card-text border-top">{{$q->isi}}</p>
                 <a href="/jawaban/{{$q->id}}/create" class="btn btn-primary">Bantu Jawab</a>
                 <a href="/jawaban/{{$q->id}}" class="btn btn-success">Lihat Jawaban</a>
+                <a href="#" class="btn btn-danger">Hapus Pertanyaan</a>
+            <a href="/pertanyaan/edit/{{$q->id}}" class="btn btn-light border-dark">Edit Pertanyaan</a>
                 <br>
-                <i class="fa fa-thumbs-up mr-3" aria-hidden="true">&nbsp;{{$q->like}}</i>
-                <i class="fa fa-thumbs-down mr-3" aria-hidden="true">&nbsp;{{$q->dislike}}</i>
-                <i class="fa fa-fire" aria-hidden="true">&nbsp;{{$q->vote}}</i>
+                <i class="fa fa-thumbs-up m-3" aria-hidden="true">&nbsp;{{$q->like}}</i>
+                <i class="fa fa-thumbs-down m-3" aria-hidden="true">&nbsp;{{$q->dislike}}</i>
+                <i class="fa fa-fire m-3" aria-hidden="true">&nbsp;{{$q->vote}}</i>
             </div>
             @endforeach
         </div>

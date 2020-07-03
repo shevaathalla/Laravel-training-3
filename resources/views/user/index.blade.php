@@ -1,8 +1,6 @@
 @extends('adminlte.master')
 
 @section('content')
-<h2>Striped Rows</h2>
-<p>The .table-striped class adds zebra-stripes to a table:</p>
 <table class="table table-striped">
     <thead>
         <tr>
