@@ -13,7 +13,7 @@
                 <input type="text" class="form-control" placeholder="Enter name" id="judul" name="judul">
             </div>
             <div class="form-group">
-                <label for="exampleFormControlTextarea1">Isi PErtanyaan</label>
+                <label for="exampleFormControlTextarea1">Isi Pertanyaan</label>
                 <textarea class="form-control" id="isi" name="isi" rows="3"></textarea>
             </div>
             <button type="submit" class="btn btn-primary">Submit</button>

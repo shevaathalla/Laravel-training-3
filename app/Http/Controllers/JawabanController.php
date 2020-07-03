@@ -12,7 +12,7 @@ class JawabanController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index($pertanyaan_id)
     {
         //
     }
@@ -33,10 +33,8 @@ class JawabanController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Request $request, $pertanyaan_id)
     {
-        $list = PertannyaanModel::insert($request);
-        return redirect('/pertanyaan');
     }
 
     /**
