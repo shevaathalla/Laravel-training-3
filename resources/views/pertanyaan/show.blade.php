@@ -12,8 +12,12 @@
                 <p class="card-text border-top">{{$data->isi}}</p>
                 <p class="card-text">Pertanyaan dibuat pada tanggal : &nbsp;{{$data->created_at}}</p>
                 <a href="/jawaban/{{$data->id}}/create" class="btn btn-primary">Bantu Jawab</a>                
-                <a href="#" class="btn btn-danger">Hapus Pertanyaan</a>
-                <a href="#" class="btn btn-light border-dark">Edit Pertanyaan</a>
+                <a href="/pertanyaan/{{$data->id}}/edit" class="btn btn-light border-dark">Edit Pertanyaan</a>
+                <form action="/pertanyaan/{{$data->id}}" method="POST" style="display: inline;">
+                    @csrf
+                    @method('DELETE')
+                    <button type="submit" class="btn btn-danger">Hapus Pertanyaan</button>
+                </form>
                 <br>
                 <i class="fa fa-thumbs-up m-3" aria-hidden="true">&nbsp;{{$data->like}}</i>
                 <i class="fa fa-thumbs-down m-3" aria-hidden="true">&nbsp;{{$data->dislike}}</i>

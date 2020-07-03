@@ -89,6 +89,7 @@ class PertanyaanController extends Controller
      */
     public function destroy($pertanyaanId)
     {
+        $delete = JawabanModel::destroy($pertanyaanId);
         $delete = PertanyaanModel::destroy($pertanyaanId);
         return redirect('/pertanyaan');
     }

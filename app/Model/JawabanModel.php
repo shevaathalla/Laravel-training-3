@@ -25,4 +25,10 @@ class JawabanModel
             ]
         );
     }
+    public static function destroy($pertanyaanId)
+    {
+        DB::table('jawaban')
+        ->where('pertanyaan_id', $pertanyaanId)
+        ->delete();
+    }
 }
