@@ -12,9 +12,11 @@ class JawabanController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index($pertanyaan_id)
+    public function index($pertanyaanId)
     {
-        //
+        $list = JawabanModel::get_all($pertanyaanId);
+
+        return view('jawaban.list', compact('list'));
     }
 
     /**
@@ -22,9 +24,9 @@ class JawabanController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create($pertanyaanId)
     {
-        //
+        return view('jawaban.create', compact('pertanyaanId'));
     }
 
     /**
@@ -33,8 +35,11 @@ class JawabanController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request, $pertanyaan_id)
+    public function store(Request $request, $pertanyaanId)
     {
+        $add = JawabanModel::insert($request, $pertanyaanId);
+        $list = JawabanModel::get_all($pertanyaanId);
+        return view('jawaban.list', compact('list'));
     }
 
     /**

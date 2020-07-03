@@ -25,6 +25,7 @@ Route::get('/signup', function () {
 });
 Route::get('/pertanyaan', 'PertanyaanController@index');
 Route::get('/pertanyaan/create', 'PertanyaanController@create');
+Route::get('/jawaban/{pertanyaanId}/create', 'JawabanController@create');
 Route::post('/pertanyaan', 'PertanyaanController@store');
-Route::get('jawaban/{pertanyaan_id}', 'JawabanController@index');
-Route::get('jawaban/{pertanyaan_id}', 'JawabanController@store');
+Route::get('/jawaban/{pertanyaanId}', 'JawabanController@index');
+Route::post('/jawaban/{pertanyaanId}', 'JawabanController@store');
